@@ -105,7 +105,10 @@ for s in V:
     # are in the form: (state, action)
     for n, a in neighbors: 
         # if state not in V, then assume it is v=0
-        v = V.get(n,0)
+        if n in V: 
+            v = V[n]
+        else:
+            v = 0
         # else then assume it is v=V[s]
         
         # set maxV to the maximum of the current v and maxV
